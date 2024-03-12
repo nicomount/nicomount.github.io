@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>rainfade</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="shortcut icon" href="/resources/fav.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        /* Define keyframes for the glow effect */
+        @keyframes glow {
+          0% { text-shadow: 0 0 10px rgba(245, 255, 130, 0.8), 0 0 20px rgba(245, 255, 130, 0.8), 0 0 30px rgba(245, 255, 130, 0.8), 0 0 40px rgba(245, 255, 130, 0.8), 0 0 50px rgba(245, 255, 130, 0.8), 0 0 60px rgba(245, 255, 130, 0.8), 0 0 70px rgba(245, 255, 130, 0.8), 0 0 80px rgba(245, 255, 130, 0.8); }
+          50% { text-shadow: none; }
+          100% { text-shadow: 0 0 10px rgba(245, 255, 130, 0.8), 0 0 20px rgba(245, 255, 130, 0.8), 0 0 30px rgba(245, 255, 130, 0.8), 0 0 40px rgba(245, 255, 130, 0.8), 0 0 50px rgba(245, 255, 130, 0.8), 0 0 60px rgba(245, 255, 130, 0.8), 0 0 70px rgba(245, 255, 130, 0.8), 0 0 80px rgba(245, 255, 130, 0.8); }
+        }
+
+        /* Apply the animation to the text with the .glow class */
+        .glow {
+          animation: glow 1.5s infinite alternate;
+          color: rgb(255, 255, 255);
+        }
+
+        /* Slow smooth shaking animation for the h1 element */
+        @keyframes shake {
+          0% { transform: translateX(0); }
+          25% { transform: translateX(-5px); }
+          50% { transform: translateX(0); }
+          75% { transform: translateX(5px); }
+          100% { transform: translateX(0); }
+        }
+
+        /* Apply the animation to the h1 element */
+        h1 {
+          animation: shake 5s infinite ease-in-out;
+        }
+
+        /* Style for footer links */
+        .footer a {
+          display: inline-block;
+          margin: 0 10px;
+          font-size: 18px;
+          text-decoration: none;
+          transition: filter 0.5s ease;
+        }
+
+        /* Apply blur effect on hover */
+        .footer a:hover {
+          filter: blur(3px);
+        }
+
+        /* Style for version text */
+        .version {
+          font-family: 'Roboto Mono', monospace;
+          font-size: 14px;
+          color: #fff;
+        }
+
+        /* Style for additional text */
+        .additional-text {
+          font-family: 'Roboto Mono', monospace;
+          font-size: 14px;
+          color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="start">
+        <a onclick="start()" class="startbtn">continue?</a>
+    </div>
+    <div id="content">
+        <div class="bg">
+            <audio id="song" loop>
+                <source src="resources/the front - quas.mp3" type="audio/mpeg">
+              </audio>
+              <video id="video" playsinline preload muted loop>
+                <source src="resources/quas.mp4" type="video/mp4">
+              </video>
+        </div>
+        <div class="main">
+            <h1>nicomount</h1>
+            <p><span class="typing glow">here for the people, relaxing website</span></p>
+            <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+            <script>
+              function getAge(dateString) {
+                var today = new Date();
+                var birthDate = new Date(dateString);
+                var age = today.getFullYear() - birthDate.getFullYear();
+                return age.toString();
+              }
+
+              var typed = new Typed('.typing', {
+                strings: ['nature enjoyer', 'im cooked', 'call me mount or nicomount', 'i love dogs', 'nature enjoyer (2x)', '13 year old developer from montenegro'],
+                typeSpeed: 60,
+                backSpeed: 40,
+                loop: true
+              });
+            </script>
+        </div>
+        <div class="footer">
+            <a href="https://twitter.com/snuglull">twitter</a>
+            <a href="https://www.youtube.com/@rainwavee">youtube</a>
+        </div>
+        <!-- Version text -->
+        <p class="version">v.1.08</p>
+        <!-- Additional text -->
+        <p class="additional-text">dc; nicomountt</p>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
